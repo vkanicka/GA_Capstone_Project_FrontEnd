@@ -1,23 +1,17 @@
-import React, {Component} from 'react'
+import React from 'react'
 import { Button, Icon } from 'semantic-ui-react'
 
-
-export default class Logout extends Component {
-  state = {
-
+export default function Logout(props) {
+  const logout = () => {
+    props.setUser({})
+    props.setLoggedIn(false)
+    fetch(props.baseURL + "/users/logout")
   }
-  logout = () => {
-    console.log(`logging out now`)
-    fetch(this.props.baseURL + "/users/logout")
-}
-render () {
   return(
     <Button
       size='mini'
-      icon onClick={()=>{this.logout()}}>
+      icon onClick={logout}>
       <Icon name='sign-out'/>
-
     </Button>
   )
-}
 }

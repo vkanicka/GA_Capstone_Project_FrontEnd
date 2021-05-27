@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Icon, Button, Modal } from "semantic-ui-react";
 import LoginForm from "./LoginForm";
 
 export default function LoginModal(props) {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   return (
     <Modal
