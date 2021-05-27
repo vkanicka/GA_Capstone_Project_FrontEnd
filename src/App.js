@@ -1,15 +1,19 @@
 // --------------------------------------------
 // IMPORTS
 //---------------------------------------------
+import "semantic-ui-css/semantic.min.css";
 import './App.css';
 import React, { Component } from "react";
+// import FrontPage from "./components/FrontPage";
+import LoginModal from "./components/LoginModal";
+import Logout from "./components/Logout";
 const p = (x)=>{console.log(x)}
 
 // --------------------------------------------
 // BASE URL
 //---------------------------------------------
 const baseURL = "http://localhost:8000/api/v1"
-const exercisesURL = `${baseURL}/exercises`
+const exercisesURL = `${baseURL}/exercises/`
 
 // --------------------------------------------
 // APP CONSTRUCTOR AND STATE
@@ -18,7 +22,9 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      exercises: []
+      exercises: [],
+      user: {},
+      loggedin:false
     };
   }
 
@@ -29,8 +35,7 @@ export default class App extends Component {
 
   getExercises = () => {
     p('getExercises')
-    const url = 'http://localhost:8000/api/v1/exercises/'
-    p(exercisesURL)
+    const url = exercisesURL
     const requestOptions = {
       method: 'GET'
       // , credentials: 'include'
@@ -60,11 +65,8 @@ render() {
     return (
       <div className="App">
         <h1>Capstone</h1>
-        {this.state.exercises.map((exercise, e) => {
-          return (
-            <p>{exercise.name}</p>
-          )
-        })}
+        <LoginModal baseURL={baseURL}/>
+        <Logout baseURL={baseURL}/>
       </div>
 // --------------------------------------------
 // THE END
