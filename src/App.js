@@ -44,20 +44,27 @@ export default function App() {
   return (
     <div className="App">
       <h1>Capstone</h1>
-      <LoginModal
-        baseURL={baseURL}
-        user={user}
-        setUser={setUser}
-        loggedin={loggedin}
-        setLoggedIn={setLoggedIn}
-      />
-      <Logout
-        baseURL={baseURL}
-        user={user}
-        setUser={setUser}
-        loggedin={loggedin}
-        setLoggedIn={setLoggedIn}
-      />
+      {loggedin
+        ? <div>
+            <Logout
+              baseURL={baseURL}
+              user={user}
+              setUser={setUser}
+              loggedin={loggedin}
+              setLoggedIn={setLoggedIn}
+              />
+              <h3>User: {user.username}</h3>
+          </div>
+        : <LoginModal
+          baseURL={baseURL}
+          user={user}
+          setUser={setUser}
+          loggedin={loggedin}
+          setLoggedIn={setLoggedIn}
+        />
+      }
+
+
     </div>
 // --------------------------------------------
 // THE END
