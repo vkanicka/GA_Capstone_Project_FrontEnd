@@ -32,6 +32,7 @@ export default function Login(props) {
         credentials: "include"
       });
       if (response.status === 200) {
+
         props.closeModal()
       } else if (response.status === 401) {
         setIncorrect("ui icon negative visible message")
@@ -90,6 +91,8 @@ return (
         <RegisterModal
           baseURL={props.baseURL}
           closeModal={props.closeModal}
+          user={props.user}
+          loggedin={props.loggedin}
         />
       </Grid.Column>
     </Grid>

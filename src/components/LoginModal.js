@@ -22,6 +22,8 @@ export default function LoginModal(props) {
         <LoginForm
           closeModal={() => setOpen(false)}
           baseURL={props.baseURL}
+          user={props.user}
+          loggedin={props.loggedin}
         />
       </Modal.Content>
 
