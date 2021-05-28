@@ -20,6 +20,7 @@ export default function App() {
   const [user, setUser] = useState({})
   const [loggedin, setLoggedIn] = useState(false)
     // const [exercises, setExercises] = useState([])
+  const [emotions, setEmotions] = useState([])
 
   // --------------------------------------------
   // APP FUNCTIONS
@@ -38,6 +39,20 @@ export default function App() {
   //   })
   // }
 
+  // const updateEmotions = (id) => {
+  //   const url = `${baseURL}/emotions/${id}`
+  //   const requestOptions = {
+  //     method: 'POST'
+  //     // , credentials: 'include'
+  //   }
+  //   fetch(url, requestOptions)
+  //   .then(response => {
+  //     return response.json();
+  //   }).then(data => {
+  //     console.log(data.data)
+  //   })
+  // }
+
 // --------------------------------------------
 // APP RENDER
 //---------------------------------------------
@@ -46,7 +61,7 @@ export default function App() {
       <h1>Capstone</h1>
       {/*//development:*/}
       <Main
-          baseURL={baseURL}
+            baseURL={baseURL}
             user={user}
             setUser={setUser}
             loggedin={loggedin}
