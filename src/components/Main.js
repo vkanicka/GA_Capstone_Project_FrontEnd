@@ -1,5 +1,6 @@
 import React from "react"
 import Logout from "./Logout";
+import InputForm from "./InputForm"
 
 export default function Entry (props) {
   return (
@@ -13,6 +14,12 @@ export default function Entry (props) {
           setLoggedIn={props.setLoggedIn}
           />
           <h3>User: {props.user.username}</h3>
-      </div>
+          {/* // <a class="ui image label">
+          //   <img src="/images/avatar/small/stevie.jpg"/>
+          //   Stevie
+          // </a> */}
+          <InputForm/>
+
+    </div>
   )
 }
