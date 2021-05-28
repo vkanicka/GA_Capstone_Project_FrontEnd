@@ -18,7 +18,13 @@ export default function Entry (props) {
           //   <img src="/images/avatar/small/stevie.jpg"/>
           //   Stevie
           // </a> */}
-          <InputForm/>
+          <InputForm
+          baseURL={props.baseURL}
+          user={props.user}
+          setUser={props.setUser}
+          loggedin={props.oggedin}
+          setLoggedIn={props.setLoggedIn}
+          />
 
     </div>
   )

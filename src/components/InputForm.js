@@ -1,38 +1,9 @@
 import React, {useState, useEffect} from "react"
 import {Button} from "semantic-ui-react";
 
-export default function InputForm() {
-  const emotions = ['Happy','Sad','Angry','Stressed','Overwhelmed','Annoyed']
-  const thoughts = [
-    	"I have no idea how to start",
-    	"I will never finish this",
-    	"Nothing matters",
-    	"I want to give up",
-    	"I wish I didn't feel this way",
-    	"I should be more productive",
-    	"My thoughts are racing",
-    	"I am too (negative adjective)"
-  ]
-  const behaviors = [
-    'Procrastinating',
-   	'Overthinking',
-  	'Avoiding',
-  	'Withdrawing',
-  	'Isolating'
-  ]
+export default function InputForm(props) {
 
-
-  const [statusHappy, setHappy] = useState(false)
-  const [statusSad, setSad] = useState(false)
-  const [statusAngry, setAngry] = useState(false)
-  const [statusOverwhelmed, setOverwhelmed] = useState(false)
-  const [statusStressed, setStressed] = useState(false)
-  const [statusAnnoyed, setAnnoyed] = useState(false)
-
-
-
-
-
+const [emotions, setEmotions] = useState([])
 
 {/*
   const fillItems = (item, i) => {
@@ -68,121 +39,71 @@ export default function InputForm() {
 
   */}
 
-  const submitForm = (e) => {
-    e.preventDefault()
-    console.log('Input Submitted')
-    console.log(
-      statusHappy, statusSad, statusAngry, statusStressed, statusOverwhelmed, statusAnnoyed)
+  const getEmotions =()=>{
+    const url = `${props.baseURL}/emotion/`
+    const requestOptions = {
+      method: 'GET'
+      // , credentials: 'include'
+    }
+    fetch(url)
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        setEmotions(data.data)
+      });
   }
 
+
+  const updateEmotion = async (id) =>{
+    console.log(id+' was clicked')
+    const url = `${props.baseURL}/emotion/${id}`
+    const emoObj = emotions[id-1]
+    console.log(emoObj)
+    console.log(url)
+
+    const response = await fetch(url, {
+      method: "PUT",
+      body: JSON.stringify({
+        status: !emoObj["status"]
+      }),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      // credentials: "include"
+    });
+
+
+
+  }
+
+  const handleSubmit = () => {
+    console.log('submit button was clicked')
+  }
+
+
+  useEffect(() => {console.log('useEffect was triggered!')})
+  useEffect(getEmotions, [])
 
 
 
   return (
-    <form className="ui form" onSubmit={submitForm}>
+    <div>
+
+    <form className="ui form" onSubmit={handleSubmit}>
     <h4>I am feeling...</h4>
-
     <div className="ui six column grid center aligned doubling">
-        <div
-          className="computer column">
-        <div
-          className=
-          {statusHappy?"ui toggle button active":"ui toggle button"}
-          onClick={()=>{setHappy(!statusHappy)}}
-          >
-        <label
-
-          >
-          Happy
-        </label>
-        </div>
-        </div>
-
-        <div
-          className="computer column">
-        <div
-          className=
-          {statusSad?"ui toggle button active":"ui toggle button"}
-          onClick={()=>{setSad(!statusSad)}}
-          >
-        <label
-
-          >
-          Sad
-        </label>
-        </div>
-        </div>
-
-
-
-        <div
-           className="computer column">
-        <div
-           className=
-          {statusAngry?"ui toggle button active":"ui toggle button"}
-          onClick={()=>{setAngry(!statusAngry)}}
-          >
-        <label
-
-          >
-          Angry
-        </label>
-        </div>
-        </div>
+      {emotions.map((emotion, e)=>{
+        return (
+          <div className="computer column">
+            <div className="ui toggle button" onClick={()=>updateEmotion(emotion["id"])}>
+              <label>{emotion["emotion"]}</label>
+            </div>
+          </div>
+        )
+      })}
     </div>
 
-    <div className="ui six column grid center aligned doubling">
-        <div
-           className="computer column">
-        <div
-           className=
-          {statusStressed?"ui toggle button active":"ui toggle button"}
-          onClick={()=>{setStressed(!statusStressed)}}
-          >
-        <label
-
-          >
-          Stressed
-        </label>
-        </div>
-        </div>
-
-
-
-        <div
-           className="computer column">
-        <div
-           className=
-          {statusOverwhelmed?"ui toggle button active":"ui toggle button"}
-          onClick={()=>{setOverwhelmed(!statusOverwhelmed)}}
-          >
-        <label
-
-          >
-          Overwhelmed
-        </label>
-        </div>
-        </div>
-
-
-
-        <div
-           className="computer column">
-        <div
-           className=
-          {statusAnnoyed?"ui toggle button active":"ui toggle button"}
-          onClick={()=>{setAnnoyed(!statusAnnoyed)}}
-          >
-        <label
-
-          >
-          Annoyed
-        </label>
-        </div>
-        </div>
-    </div>
-
-    <br/>
     <br/>
     <br/>
 
@@ -191,5 +112,17 @@ export default function InputForm() {
     </div>
 
 </form>
+
+<br/>
+<br/>
+{emotions.map((emotionObject, e) => {
+          return (
+            <p key={e}>{emotionObject["emotion"]}: {emotionObject["status"]}</p>
+          )
+        })}
+
+
+
+</div>
   )
 }
