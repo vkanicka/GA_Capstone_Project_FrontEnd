@@ -4,8 +4,9 @@
 import "semantic-ui-css/semantic.min.css";
 import './App.css';
 import React, { useState } from "react";
-import Entry from "./components/Entry";
+// import Entry from "./components/Entry";
 import Main from "./components/Main";
+// import LoginModal from "./components/LoginModal";
 
 // --------------------------------------------
 // BASE URL
@@ -43,24 +44,37 @@ export default function App() {
   return (
     <div className="App">
       <h1>Capstone</h1>
-      {loggedin
-        ? <Main
-            baseURL={baseURL}
+      {/*//development:*/}
+      <Main
+          baseURL={baseURL}
             user={user}
             setUser={setUser}
             loggedin={loggedin}
             setLoggedIn={setLoggedIn}
-          />
-        : <div>
-            <Entry
+        />
+      {/**/}
+
+        {/*loggedin
+          ? <Main
               baseURL={baseURL}
               user={user}
               setUser={setUser}
               loggedin={loggedin}
               setLoggedIn={setLoggedIn}
             />
-          </div>
-      }
+          : <div>
+              <Entry
+                baseURL={baseURL}
+                user={user}
+                setUser={setUser}
+                loggedin={loggedin}
+                setLoggedIn={setLoggedIn}
+              />
+            </div>
+        */}
+
+
+
 
 
     </div>
