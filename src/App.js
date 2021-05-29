@@ -19,8 +19,7 @@ const baseURL = "http://localhost:8000/api/v1"
 export default function App() {
   const [user, setUser] = useState({})
   const [loggedin, setLoggedIn] = useState(false)
-    // const [exercises, setExercises] = useState([])
-  const [emotions, setEmotions] = useState([])
+
 
   // --------------------------------------------
   // APP FUNCTIONS
