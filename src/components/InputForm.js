@@ -44,7 +44,8 @@ const [behaviors, setBehaviors] = useState([])
   }
 
 
-  const handleSubmit = () => {
+  const submitInput = async e => {
+    e.preventDefault()
     console.log('submit button was clicked')
   }
 
@@ -58,7 +59,7 @@ const [behaviors, setBehaviors] = useState([])
   return (
     <div>
 
-    <form className="ui form" onSubmit={handleSubmit}>
+    <form className="ui form" onSubmit={submitInput}>
 
     <h4>I am feeling...</h4>
     <div className="ui six column grid center aligned doubling">
