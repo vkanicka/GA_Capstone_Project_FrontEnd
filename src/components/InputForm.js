@@ -44,8 +44,7 @@ const [behaviors, setBehaviors] = useState([])
     getETBs(type)
   }
 
-
-
+  
   const submitInput = async e => {
     e.preventDefault()
     console.log('submit button was clicked')
@@ -61,7 +60,7 @@ const [behaviors, setBehaviors] = useState([])
   }
 
 
-  useEffect(() => {console.log('useEffect was triggered!')})
+  // useEffect(() => {console.log('useEffect was triggered!')})
   useEffect(()=>getETBs('emotions'), [])
   useEffect(()=>getETBs('thoughts'), [])
   useEffect(()=>getETBs('behaviors'), [])

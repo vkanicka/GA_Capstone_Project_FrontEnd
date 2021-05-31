@@ -15,9 +15,17 @@ export default function SuggestedExercise(props) {
       })
   }
 
+  const resetETBs = () => {
+    console.log('resetting ETBs')
+
+    fetch(props.baseURL+'/reset/', {method:"PUT"})
+      
+  }
+
 
 
   useEffect(getSuggestedExercise, [])
+  useEffect(resetETBs,[])
 
 
 
