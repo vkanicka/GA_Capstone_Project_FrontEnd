@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react"
 import {Button} from "semantic-ui-react";
 
+
 export default function InputForm(props) {
 
 const [emotions, setEmotions] = useState([])
@@ -44,9 +45,19 @@ const [behaviors, setBehaviors] = useState([])
   }
 
 
+
   const submitInput = async e => {
     e.preventDefault()
     console.log('submit button was clicked')
+    const url = `${props.baseURL}/suggestedexercises/`
+    await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      // credentials: "include"
+    })
+    props.setSuggested(true)
   }
 
 
