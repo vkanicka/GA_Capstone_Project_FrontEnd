@@ -1,4 +1,4 @@
-import React, {useState } from "react";
+import React, {useState, useEffect } from "react";
 import { Button, Divider, Form, Grid, Segment } from "semantic-ui-react";
 import RegisterModal from "./RegisterModal";
 
@@ -32,9 +32,10 @@ export default function Login(props) {
         credentials: "include"
       });
       if (response.status === 200) {
+        props.closeModal()
         props.setUser(loginBody)
         props.setLoggedIn(true)
-        props.closeModal()
+
       } else if (response.status === 401) {
         setIncorrect("ui icon negative visible message")
       } else {
@@ -44,6 +45,10 @@ export default function Login(props) {
       console.log("Error => ", err);
     }
 }
+useEffect(props.setUser, [])
+useEffect(props.setLoggedIn, [])
+useEffect(props.closeModal, [])
+
 return (
   <Segment placeholder>
     <Grid columns={2} relaxed="very" stackable>

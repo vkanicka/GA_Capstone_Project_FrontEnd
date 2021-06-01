@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Icon, Button, Modal } from "semantic-ui-react";
 import LoginForm from "./LoginForm";
 
 export default function LoginModal(props) {
   const [open, setOpen] = useState(false);
 
+  useEffect(setOpen)
   return (
     <Modal
       onClose={() => setOpen(false)}
