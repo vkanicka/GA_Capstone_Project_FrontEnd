@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
+
 .App {
   text-align: center;
 }
@@ -35,4 +38,67 @@
   to {
     transform: rotate(360deg);
   }
+}
+body {
+/* background-color: #d9dbf1; */
+background-color: rgba(160, 182, 227,.7)
+}
+
+#customButtons {
+  background-color: rgba(160, 182, 227,.3);
+  background-color: rgba(250,250,250,.3);
+  /* border: 3px solid rgba(138,248,185,1); */
+  color: darkslategray;
+  /* border: 1px solid rgba(34, 36, 38, 0.15); */
+  /* background-image:
+  linear-gradient(
+    rgba(191, 237, 193,.5) 0%,
+    rgba(182, 201, 187,.3) 20%,
+    rgba(170, 172, 176, .4) 40%,
+    rgba(150, 132, 161, .4) 80%,
+    rgba(152, 95, 153, .5) 100%
+    ); */
+
+}
+#customButtons:hover{
+  background-color: rgba(138,248,185,.3);
+  transition-duration: .3s;
+  /* border: 3px solid rgba(138,248,185,1); */
+}
+#customButtonsActive{
+  background-color: rgba(138,248,185,.6);
+  /* border: 3px solid rgba(138,248,185,1); */
+}
+
+#inputFormSubheaders {
+  text-align: left;
+  font-size: 30px;
+  color: darkslategray;
+  font-family: 'Reenie Beanie', sans-serif;
+}
+
+#inputGreeting {
+  text-align: left;
+  font-size: 40px;
+  color: darkslategray;
+  font-family: 'Syne', sans-serif;
+}
+
+#ui-container {
+  /* margin: 100px; */
+}
+
+#exerciseContainer {
+  margin: 125px;
+  color:darkslategray;
+
+}
+
+#exerciseHeader {
+  color: darkslategray;
+}
+
+#exerciseDescription {
+  text-align: left;
+  color:darkslategray;
 }

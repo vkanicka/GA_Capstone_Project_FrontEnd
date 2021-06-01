@@ -56,7 +56,6 @@ export default function App() {
 //---------------------------------------------
   return (
     <div className="App">
-      <h1>Capstone</h1>
       {/*
       <Main
             baseURL={baseURL}
@@ -65,7 +64,7 @@ export default function App() {
             loggedin={loggedin}
             setLoggedIn={setLoggedIn}
         />
-      {/**/}
+      */}
 
         {/**/}
         {loggedin

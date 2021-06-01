@@ -44,7 +44,7 @@ const [behaviors, setBehaviors] = useState([])
     getETBs(type)
   }
 
-  
+
   const submitInput = async e => {
     e.preventDefault()
     console.log('submit button was clicked')
@@ -65,18 +65,37 @@ const [behaviors, setBehaviors] = useState([])
   useEffect(()=>getETBs('thoughts'), [])
   useEffect(()=>getETBs('behaviors'), [])
 
+  const activeButtonStyle = "ui button circular big"
+  const buttonStyle = "ui element button circular big"
+  const customButtons = "customButtons"
+  const customButtonsActive = "customButtonsActive"
 
   return (
     <div>
-
+    <div id="ui-container" className="ui container">
+    <div>
+    <h2 id='inputGreeting'>Hi Victoria,</h2>
+    <h2 id='inputGreeting'>How are you doing today?</h2>
+    </div>
     <form className="ui form" onSubmit={submitInput}>
 
-    <h4>I am feeling...</h4>
-    <div className="ui six column grid center aligned doubling">
+    <div class="ui section divider"></div>
+
+    <h4 id='inputFormSubheaders'>I am feeling...</h4>
+    <div className="ui six column grid left aligned doubling">
       {emotions.map((emotion, e)=>{
         return (
           <div key={`emotion-${emotion["id"]}-column`} className="computer column">
-            <div key={`emotion-${emotion["id"]}-button`} className={emotion["status"]?"ui toggle button active":"ui toggle button"} onClick={()=>updateETB("emotions",emotion)}>
+            <div
+                key={`emotion-${emotion["id"]}-button`}
+                className={
+                      emotion["status"]?
+                          activeButtonStyle
+                          :buttonStyle
+                        }
+                id={emotion["status"]?customButtonsActive
+                :customButtons}
+                onClick={()=>updateETB("emotions",emotion)}>
               <label key={`emotion-${emotion["id"]}-label`}>{emotion["emotion"]}</label>
             </div>
           </div>
@@ -84,12 +103,18 @@ const [behaviors, setBehaviors] = useState([])
       })}
     </div>
 
-    <h4>I am thinking...</h4>
-    <div className="ui six column grid center aligned doubling">
+    <div class="ui section divider"></div>
+
+    <h4 id='inputFormSubheaders'>I am thinking...</h4>
+    <div className="ui six column grid left aligned doubling">
       {thoughts.map((thought, e)=>{
         return (
           <div key={`thought-${thought["id"]}-column`} className="computer column">
-            <div key={`thought-${thought["id"]}-button`} className={thought["status"]?"ui toggle button active":"ui toggle button"} onClick={()=>updateETB("thoughts",thought)}>
+            <div key={`thought-${thought["id"]}-button`}
+            id={thought["status"]?customButtonsActive
+            :customButtons} className={thought["status"]?activeButtonStyle
+            :buttonStyle}
+             onClick={()=>updateETB("thoughts",thought)}>
               <label key={`thought-${thought["id"]}-label`}>{thought["thought"]}</label>
             </div>
           </div>
@@ -97,12 +122,17 @@ const [behaviors, setBehaviors] = useState([])
       })}
     </div>
 
-    <h4>My actions include...</h4>
-    <div className="ui six column grid center aligned doubling">
+    <div class="ui section divider"></div>
+
+    <h4 id='inputFormSubheaders'>My actions include...</h4>
+    <div className="ui six column grid left aligned doubling">
       {behaviors.map((behavior, e)=>{
         return (
           <div key={`behavior-${behavior["id"]}-column`} className="computer column">
-            <div key={`behavior-${behavior["id"]}-button`} className={behavior["status"]?"ui toggle button active":"ui toggle button"} onClick={()=>updateETB("behaviors",behavior)}>
+            <div key={`behavior-${behavior["id"]}-button`} className={behavior["status"]?activeButtonStyle
+            :buttonStyle}
+            id={behavior["status"]?customButtonsActive
+            :customButtons} onClick={()=>updateETB("behaviors",behavior)}>
               <label key={`behavior-${behavior["id"]}-label`}>{behavior["behavior"]}</label>
             </div>
           </div>
@@ -113,16 +143,18 @@ const [behaviors, setBehaviors] = useState([])
     <br/>
     <br/>
 
+    <div class="ui section divider"></div>
     <div className='ui text container'>
-     <Button type='submit'>Submit</Button>
+     <Button className='big' type='submit'><i class='paper plane outline icon'></i>Submit</Button>
     </div>
+
 
 </form>
 
 <br/>
 <br/>
 
-
+</div>
 </div>
   )
 }

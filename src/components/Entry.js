@@ -3,8 +3,7 @@ import LoginModal from "./LoginModal";
 
 export default function Entry (props) {
   return (
-    <div>
-      <h3>This is the entry page</h3>
+    <div >
       <LoginModal
         baseURL={props.baseURL}
         user={props.user}

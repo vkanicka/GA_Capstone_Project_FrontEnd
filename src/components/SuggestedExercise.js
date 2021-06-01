@@ -19,7 +19,7 @@ export default function SuggestedExercise(props) {
     console.log('resetting ETBs')
 
     fetch(props.baseURL+'/reset/', {method:"PUT"})
-      
+
   }
 
 
@@ -30,11 +30,15 @@ export default function SuggestedExercise(props) {
 
 
   return (
-    <div>
-      <h2>{exercise["name"]}</h2>
-      <p>{exercise["description"]}</p>
-
-
+    <div id='exerciseContainer'>
+      <div class="ui segment">
+        <h2 id="exerciseHeader" class="ui center aligned header">{exercise["name"]}</h2>
+        <div class="ui clearing divider"></div>
+        <p id="exerciseDescription">{exercise["description"]}</p>
+      </div>
     </div>
+
+
+
   )
 }

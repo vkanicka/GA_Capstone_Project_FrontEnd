@@ -8,7 +8,6 @@ export default function Entry (props) {
 
   return (
     <div>
-        <h3>This is the main page</h3>
         <Logout
           baseURL={props.baseURL}
           user={props.user}
@@ -16,11 +15,6 @@ export default function Entry (props) {
           loggedin={props.oggedin}
           setLoggedIn={props.setLoggedIn}
           />
-          <h3>User: {props.user.username}</h3>
-          {/* // <a class="ui image label">
-          //   <img src="/images/avatar/small/stevie.jpg"/>
-          //   Stevie
-          // </a> */}
 
           {exerciseSuggested === false?
             <InputForm
