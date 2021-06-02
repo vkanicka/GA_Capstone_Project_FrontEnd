@@ -79,7 +79,7 @@ const [behaviors, setBehaviors] = useState([])
     </div>
     <form className="ui form" onSubmit={submitInput}>
 
-    <div class="ui section divider"></div>
+    <div className="ui section divider"></div>
 
     <h4 id='inputFormSubheaders'>I am feeling...</h4>
     <div className="ui six column grid left aligned doubling">
@@ -103,7 +103,7 @@ const [behaviors, setBehaviors] = useState([])
       })}
     </div>
 
-    <div class="ui section divider"></div>
+    <div className="ui section divider"></div>
 
     <h4 id='inputFormSubheaders'>I am thinking...</h4>
     <div className="ui six column grid left aligned doubling">
@@ -122,7 +122,7 @@ const [behaviors, setBehaviors] = useState([])
       })}
     </div>
 
-    <div class="ui section divider"></div>
+    <div className="ui section divider"></div>
 
     <h4 id='inputFormSubheaders'>My actions include...</h4>
     <div className="ui six column grid left aligned doubling">
@@ -143,9 +143,9 @@ const [behaviors, setBehaviors] = useState([])
     <br/>
     <br/>
 
-    <div class="ui section divider"></div>
+    <div className="ui section divider"></div>
     <div className='ui text container'>
-     <Button className='big' type='submit'><i class='paper plane outline icon'></i>Submit</Button>
+     <Button className='big' type='submit'><i className='paper plane outline icon'></i>Submit</Button>
     </div>
 
 
