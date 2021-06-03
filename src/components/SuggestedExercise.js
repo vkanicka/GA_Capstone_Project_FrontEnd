@@ -76,7 +76,7 @@ try {
     headers: {
       "Content-Type": "application/json"
     },
-    // credentials: "include"
+    credentials: "include"
   });
   if (response.status === 200) {
     setUserExercise(prevState=> ({...prevState, favorite: !prevState.favorite}))
@@ -103,7 +103,7 @@ try {
       headers: {
         "Content-Type": "application/json"
       },
-      // credentials: "include"
+      credentials: "include"
     });
     if (response.status === 200) {
       setUserExercise(prevState=> ({...prevState, completed: !prevState.completed}))

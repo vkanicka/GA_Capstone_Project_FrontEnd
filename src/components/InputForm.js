@@ -12,7 +12,7 @@ const [behaviors, setBehaviors] = useState([])
     const url = `${props.baseURL}/${type.replace('s','')}/`
     const requestOptions = {
       method: 'GET'
-      // , credentials: 'include'
+      , credentials: 'include'
     }
     await fetch(url, requestOptions)
       .then(res => {
@@ -39,7 +39,7 @@ const [behaviors, setBehaviors] = useState([])
       headers: {
         "Content-Type": "application/json"
       },
-      // credentials: "include"
+      credentials: "include"
     });
     getETBs(type)
   }
@@ -52,7 +52,7 @@ const [behaviors, setBehaviors] = useState([])
       headers: {
         "Content-Type": "application/json"
       },
-      // credentials: "include"
+      credentials: "include"
     })
     props.setSuggested(true)
   }

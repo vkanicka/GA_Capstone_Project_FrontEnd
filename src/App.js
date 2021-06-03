@@ -19,37 +19,10 @@ export default function App() {
   const [user, setUser] = useState({})
   const [loggedin, setLoggedIn] = useState(false)
 
+// --------------------------------------------
+// APP FUNCTIONS
+//---------------------------------------------
 
-  // --------------------------------------------
-  // APP FUNCTIONS
-  //---------------------------------------------
-  // const getExercises = () => {
-  //   const url = `${baseURL}/exercises/`
-  //   const requestOptions = {
-  //     method: 'GET'
-  //     // , credentials: 'include'
-  //   }
-  //   fetch(url, requestOptions)
-  //   .then(response => {
-  //     return response.json();
-  //   }).then(data => {
-  //     setExercises(data.data)
-  //   })
-  // }
-
-  // const updateEmotions = (id) => {
-  //   const url = `${baseURL}/emotions/${id}`
-  //   const requestOptions = {
-  //     method: 'POST'
-  //     // , credentials: 'include'
-  //   }
-  //   fetch(url, requestOptions)
-  //   .then(response => {
-  //     return response.json();
-  //   }).then(data => {
-  //     console.log(data.data)
-  //   })
-  // }
 
 // --------------------------------------------
 // APP RENDER
@@ -65,8 +38,6 @@ export default function App() {
             setLoggedIn={setLoggedIn}
         />
       */}
-
-        {/**/}
         {loggedin
           ? <Main
               baseURL={baseURL}
@@ -84,12 +55,6 @@ export default function App() {
                 setLoggedIn={setLoggedIn}
               />
             </div>}
-        {/**/}
-
-
-
-
-
     </div>
 // --------------------------------------------
 // THE END
