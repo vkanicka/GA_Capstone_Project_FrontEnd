@@ -19,6 +19,7 @@ export default function Login(props) {
   const loggingUser = async e => {
     e.preventDefault()
     const url = `${props.baseURL}/users/login`
+    console.log(url)
     const loginBody = {
       username: username, email: email, password: password
     }
