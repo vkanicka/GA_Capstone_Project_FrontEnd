@@ -1,6 +1,10 @@
 {
   "name": "ga_capstone_project_frontend",
   "version": "0.1.0",
+  "engines": {
+    "node": "15.4.0",
+    "npm": "7.9.0"
+  },
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.12.0",
