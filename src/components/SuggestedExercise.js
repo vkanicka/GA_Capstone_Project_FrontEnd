@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+// import UserExercises from "./UserExercises";
 
 export default function SuggestedExercise(props) {
   const [exercise, setExercise] = useState({})
@@ -145,6 +146,13 @@ try {
             <button onClick={completeUserExercise} className="ui button"><i className={userExercise["completed"]?'check icon green':'check icon'}/>Completed Today</button>
         </div>
       </div>
+      {/*}<UserExercises
+        baseURL={props.baseURL}
+        user={props.user}
+        setUser={props.setUser}
+        loggedin={props.loggedin}
+        setLoggedIn={props.setLoggedIn}
+      />*/}
     </div>
   )
 }
