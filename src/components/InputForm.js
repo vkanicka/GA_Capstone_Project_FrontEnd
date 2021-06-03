@@ -44,10 +44,8 @@ const [behaviors, setBehaviors] = useState([])
     getETBs(type)
   }
 
-
   const submitInput = async e => {
     e.preventDefault()
-    console.log('submit button was clicked')
     const url = `${props.baseURL}/suggestedexercises/`
     await fetch(url, {
       method: "POST",
@@ -59,8 +57,6 @@ const [behaviors, setBehaviors] = useState([])
     props.setSuggested(true)
   }
 
-
-  // useEffect(() => {console.log('useEffect was triggered!')})
   useEffect(()=>getETBs('emotions'), [])
   useEffect(()=>getETBs('thoughts'), [])
   useEffect(()=>getETBs('behaviors'), [])
@@ -74,7 +70,7 @@ const [behaviors, setBehaviors] = useState([])
     <div>
     <div id="ui-container" className="ui container">
     <div>
-    <h2 id='inputGreeting'>Hi Victoria,</h2>
+    <h2 id='inputGreeting'>Hi {props.user["username"]},</h2>
     <h2 id='inputGreeting'>How are you doing today?</h2>
     </div>
     <form className="ui form" onSubmit={submitInput}>
