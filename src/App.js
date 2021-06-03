@@ -29,7 +29,7 @@ export default function App() {
 //---------------------------------------------
   return (
     <div className="App">
-      {/*
+
       <Main
             baseURL={baseURL}
             user={user}
@@ -37,7 +37,9 @@ export default function App() {
             loggedin={loggedin}
             setLoggedIn={setLoggedIn}
         />
-      */}
+
+
+      {/*
         {loggedin
           ? <Main
               baseURL={baseURL}
@@ -55,6 +57,13 @@ export default function App() {
                 setLoggedIn={setLoggedIn}
               />
             </div>}
+
+      */}
+
+
+
+
+
     </div>
 // --------------------------------------------
 // THE END
