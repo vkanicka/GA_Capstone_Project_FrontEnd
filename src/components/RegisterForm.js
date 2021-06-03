@@ -17,7 +17,7 @@ const handleChange = (e, { name, value }) => {
 }
 const register = async e => {
   e.preventDefault();
-  const url = props.baseURL + "/users/register";
+  const url = props.baseURL + "/users/register/";
   console.log(url)
   const registerBody = {username: username, email: email, password: password
   };
