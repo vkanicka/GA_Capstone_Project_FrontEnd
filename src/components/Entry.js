@@ -6,7 +6,7 @@ export default function Entry (props) {
   return (
     <div >
       <LoginModal
-        baseURL={props.baseURL}
+        BASEURL={props.BASEURL}
         user={props.user}
         setUser={props.setUser}
         loggedin={props.loggedin}

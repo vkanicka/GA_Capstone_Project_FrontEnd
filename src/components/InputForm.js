@@ -9,7 +9,7 @@ const [thoughts, setThoughts] = useState([])
 const [behaviors, setBehaviors] = useState([])
 
   const getETBs = async (type)=>{
-    const url = `${props.baseURL}/${type.replace('s','')}/`
+    const url = `${props.BASEURL}/${type.replace('s','')}/`
     const requestOptions = {
       method: 'GET'
       , credentials: 'include'
@@ -30,7 +30,7 @@ const [behaviors, setBehaviors] = useState([])
   }
 
   const updateETB = async (type, etbObj) => {
-    const url = `${props.baseURL}/${type.replace('s','')}/${etbObj["id"]}`
+    const url = `${props.BASEURL}/${type.replace('s','')}/${etbObj["id"]}`
     await fetch(url, {
       method: "PUT",
       body: JSON.stringify({
@@ -46,7 +46,7 @@ const [behaviors, setBehaviors] = useState([])
 
   const submitInput = async e => {
     e.preventDefault()
-    const url = `${props.baseURL}/suggestedexercises/`
+    const url = `${props.BASEURL}/suggestedexercises/`
     await fetch(url, {
       method: "POST",
       headers: {

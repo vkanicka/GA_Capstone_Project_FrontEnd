@@ -18,7 +18,7 @@ export default function Login(props) {
   }
   const loggingUser = async e => {
     e.preventDefault()
-    const url = `${props.baseURL}/users/login`
+    const url = `${props.BASEURL}/users/login`
     console.log(url)
     const loginBody = {
       username: username, email: email, password: password
@@ -97,7 +97,7 @@ return (
       <Grid.Column verticalAlign="middle">
         <RegisterModal
           closeModal={props.closeModal}
-          baseURL={props.baseURL}
+          BASEURL={props.BASEURL}
           user={props.user}
           setUser={props.setUser}
           loggedin={props.loggedin}

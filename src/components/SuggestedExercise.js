@@ -8,7 +8,7 @@ export default function SuggestedExercise(props) {
   const [exists, setExists]=useState(false)
 
   const getSuggestedExercise = () => {
-    fetch(props.baseURL+'/suggestedexercises/1')
+    fetch(props.BASEURL+'/suggestedexercises/1')
       .then(response => {
         return response.json()
       })
@@ -19,14 +19,14 @@ export default function SuggestedExercise(props) {
       .then(()=>resetETBs())
   }
   const resetETBs = () => {
-    fetch(props.baseURL+'/reset/', {method:"PUT"})
+    fetch(props.BASEURL+'/reset/', {method:"PUT"})
     console.log('ETBs reset.')
   }
 
   const addUserExercise = () => {
     console.log('triggered add user exercise')
     fetch(
-      props.baseURL+'/userexercises/',
+      props.BASEURL+'/userexercises/',
       {
         method: "POST",
         body: JSON.stringify({
@@ -66,7 +66,7 @@ const favoriteUserExercise = async e => {
   // if not, run addUserExercise funciton first
   e.preventDefault()
   console.log(`user exercise id: ${userExerciseID}`)
-  const url = `${props.baseURL}/userexercises/${userExerciseID}`
+  const url = `${props.BASEURL}/userexercises/${userExerciseID}`
 try {
   const response = await fetch(url, {
     method: "PUT",
@@ -93,7 +93,7 @@ try {
     // if not, run addUserExercise funciton first
     e.preventDefault()
     console.log(`user exercise id: ${userExerciseID}`)
-    const url = `${props.baseURL}/userexercises/${userExerciseID}`
+    const url = `${props.BASEURL}/userexercises/${userExerciseID}`
   try {
     const response = await fetch(url, {
       method: "PUT",
@@ -147,7 +147,7 @@ try {
         </div>
       </div>
       {/*}<UserExercises
-        baseURL={props.baseURL}
+        BASEURL={props.BASEURL}
         user={props.user}
         setUser={props.setUser}
         loggedin={props.loggedin}

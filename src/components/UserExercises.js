@@ -4,7 +4,7 @@ export default function UserExercises(props) {
   const [userExercises, setUserExercises] = useState([])
 
   const getUserExercises = () => {
-    fetch(props.baseURL+'/userexercises', {method:"GET"})
+    fetch(props.BASEURL+'/userexercises', {method:"GET"})
       .then(response => {
         return response.json()
       })

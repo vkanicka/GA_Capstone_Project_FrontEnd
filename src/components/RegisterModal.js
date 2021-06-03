@@ -17,7 +17,7 @@ export default function RegisterModal(props) {
       <Modal.Content>
         <RegisterForm
           closeModal={() => setOpen(false)}
-          baseURL={props.baseURL}
+          BASEURL={props.BASEURL}
           user={props.user}
           loggedin={props.loggedin}
         />

@@ -10,8 +10,8 @@ import Main from "./components/Main";
 // --------------------------------------------
 // BASE URL
 //---------------------------------------------
-// const baseURL = "http://localhost:8000"
-const baseURL = "https://mental-health-trainer.herokuapp.com"
+// const BASEURL = "http://localhost:8000"
+const BASEURL = "https://mental-health-trainer.herokuapp.com"
 // --------------------------------------------
 // APP CONSTRUCTOR AND STATE
 //---------------------------------------------
@@ -31,7 +31,7 @@ export default function App() {
     <div className="App">
 
       <Main
-            baseURL={baseURL}
+            BASEURL={BASEURL}
             user={user}
             setUser={setUser}
             loggedin={loggedin}
@@ -42,7 +42,7 @@ export default function App() {
       {/*
         {loggedin
           ? <Main
-              baseURL={baseURL}
+              BASEURL={BASEURL}
               user={user}
               setUser={setUser}
               loggedin={loggedin}
@@ -50,7 +50,7 @@ export default function App() {
             />
           : <div>
               <Entry
-                baseURL={baseURL}
+                BASEURL={BASEURL}
                 user={user}
                 setUser={setUser}
                 loggedin={loggedin}

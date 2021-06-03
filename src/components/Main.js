@@ -9,7 +9,7 @@ export default function Entry (props) {
   return (
     <div>
         <Logout
-          baseURL={props.baseURL}
+          BASEURL={props.BASEURL}
           user={props.user}
           setUser={props.setUser}
           loggedin={props.oggedin}
@@ -18,7 +18,7 @@ export default function Entry (props) {
 
           {exerciseSuggested === false?
             <InputForm
-            baseURL={props.baseURL}
+            BASEURL={props.BASEURL}
             user={props.user}
             setUser={props.setUser}
             loggedin={props.oggedin}
@@ -27,7 +27,7 @@ export default function Entry (props) {
             />
             :
             <SuggestedExercise
-            baseURL={props.baseURL}
+            BASEURL={props.BASEURL}
             user={props.user}
             setUser={props.setUser}
             loggedin={props.oggedin}
