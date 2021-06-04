@@ -121,10 +121,9 @@ try {
 
 
   useEffect(getSuggestedExercise, [])
-
   // useEffect(resetETBs,[])
   // useEffect(addUserExercise,[])
-  // console.log('userexerciseID:'+userExerciseID)
+  console.log('userexerciseID:'+userExerciseID)
 
   return (
     <div id='exerciseContainer'>

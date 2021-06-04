@@ -12,6 +12,7 @@ import Main from "./components/Main";
 //---------------------------------------------
 // const BASEURL = "http://localhost:8000"
 const BASEURL = "https://mental-health-trainer.herokuapp.com"
+console.log(`my BASEURL is ${BASEURL}`)
 // --------------------------------------------
 // APP CONSTRUCTOR AND STATE
 //---------------------------------------------
@@ -31,39 +32,32 @@ export default function App() {
     <div className="App">
 
 {/*
-      <Main
-            BASEURL={BASEURL}
-            user={user}
-            setUser={setUser}
-            loggedin={loggedin}
-            setLoggedIn={setLoggedIn}
+  {loggedin
+    ? <Main
+        BASEURL={BASEURL}
+        user={user}
+        setUser={setUser}
+        loggedin={loggedin}
+        setLoggedIn={setLoggedIn}
+      />
+    : <div>
+        <Entry
+          BASEURL={BASEURL}
+          user={user}
+          setUser={setUser}
+          loggedin={loggedin}
+          setLoggedIn={setLoggedIn}
         />
+      </div>}
 */}
 
-
-        {loggedin
-          ? <Main
-              BASEURL={BASEURL}
-              user={user}
-              setUser={setUser}
-              loggedin={loggedin}
-              setLoggedIn={setLoggedIn}
-            />
-          : <div>
-              <Entry
-                BASEURL={BASEURL}
-                user={user}
-                setUser={setUser}
-                loggedin={loggedin}
-                setLoggedIn={setLoggedIn}
+            <Main
+                  BASEURL={BASEURL}
+                  user={user}
+                  setUser={setUser}
+                  loggedin={loggedin}
+                  setLoggedIn={setLoggedIn}
               />
-            </div>}
-
-
-
-
-
-
 
     </div>
 // --------------------------------------------
