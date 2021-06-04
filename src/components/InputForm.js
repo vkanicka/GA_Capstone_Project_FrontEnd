@@ -61,8 +61,8 @@ const [behaviors, setBehaviors] = useState([])
   }
 
   useEffect(()=> getETBs('emotions'), [])
-  // useEffect(()=> getETBs('thoughts'), [])
-  // useEffect(()=> getETBs('behaviors'), [])
+  useEffect(()=> getETBs('thoughts'), [])
+  useEffect(()=> getETBs('behaviors'), [])
 
   const activeButtonStyle = "ui button circular big"
   const buttonStyle = "ui element button circular big"
