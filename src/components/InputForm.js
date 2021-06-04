@@ -44,7 +44,7 @@ const [behaviors, setBehaviors] = useState([])
       },
       // credentials: "include"
     });
-    // getETBs(type)
+    getETBs(type)
   }
 
   const submitInput = async e => {
