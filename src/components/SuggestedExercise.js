@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 // import UserExercises from "./UserExercises";
 
 export default function SuggestedExercise(props) {
+  console.log(props.user)
   const [exercise, setExercise] = useState({})
   const [userExercise, setUserExercise] = useState({})
   const [userExerciseID, setUserExerciseID] = useState(0)
@@ -25,6 +26,8 @@ export default function SuggestedExercise(props) {
 
   const addUserExercise = () => {
     console.log('triggered add user exercise')
+    console.log(exercise)
+    console.log(props.user)
     fetch(
       props.BASEURL+'/userexercises/',
       {
@@ -38,8 +41,8 @@ export default function SuggestedExercise(props) {
         }),
         headers: {
           "Content-Type": "application/json"
-        },
-        credentials: "include"
+        }
+        //, credentials: "include"
       })
       .then(response => {
         return response.json()
@@ -76,7 +79,7 @@ try {
     headers: {
       "Content-Type": "application/json"
     },
-    credentials: "include"
+    // credentials: "include"
   });
   if (response.status === 200) {
     setUserExercise(prevState=> ({...prevState, favorite: !prevState.favorite}))
@@ -103,7 +106,7 @@ try {
       headers: {
         "Content-Type": "application/json"
       },
-      credentials: "include"
+      // credentials: "include"
     });
     if (response.status === 200) {
       setUserExercise(prevState=> ({...prevState, completed: !prevState.completed}))

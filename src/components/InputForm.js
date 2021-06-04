@@ -1,24 +1,27 @@
 import React, {useState, useEffect} from "react"
 import {Button} from "semantic-ui-react";
 
-
 export default function InputForm(props) {
+    console.log(props.user)
 
 const [emotions, setEmotions] = useState([])
 const [thoughts, setThoughts] = useState([])
 const [behaviors, setBehaviors] = useState([])
 
   const getETBs = async (type)=>{
+    console.log('hello')
     const url = `${props.BASEURL}/${type.replace('s','')}/`
+    console.log(url)
     const requestOptions = {
       method: 'GET'
-      , credentials: 'include'
+      // , credentials: 'include'
     }
     await fetch(url, requestOptions)
       .then(res => {
         return res.json();
       })
       .then(data => {
+        console.log(data)
         switch (type) {
           case 'emotions': setEmotions(data.data); break;
           case 'thoughts': setThoughts(data.data); break;
@@ -39,7 +42,7 @@ const [behaviors, setBehaviors] = useState([])
       headers: {
         "Content-Type": "application/json"
       },
-      credentials: "include"
+      // credentials: "include"
     });
     getETBs(type)
   }
@@ -52,14 +55,14 @@ const [behaviors, setBehaviors] = useState([])
       headers: {
         "Content-Type": "application/json"
       },
-      credentials: "include"
+      // credentials: "include"
     })
     props.setSuggested(true)
   }
 
-  useEffect(()=>getETBs('emotions'), [])
-  useEffect(()=>getETBs('thoughts'), [])
-  useEffect(()=>getETBs('behaviors'), [])
+  useEffect(()=> getETBs('emotions'), [])
+  useEffect(()=> getETBs('thoughts'), [])
+  useEffect(()=> getETBs('behaviors'), [])
 
   const activeButtonStyle = "ui button circular big"
   const buttonStyle = "ui element button circular big"

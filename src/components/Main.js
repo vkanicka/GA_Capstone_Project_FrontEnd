@@ -5,6 +5,7 @@ import SuggestedExercise from "./SuggestedExercise"
 
 export default function Entry (props) {
   const [exerciseSuggested, setSuggested] = useState(false)
+  console.log(props.user)
 
   return (
     <div>

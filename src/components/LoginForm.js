@@ -30,12 +30,13 @@ export default function Login(props) {
         headers: {
           "Content-Type": "application/json"
         },
-        credentials: "include"
+        // credentials: "include"
       });
       if (response.status === 200) {
         props.closeModal()
         props.setUser(loginBody)
         props.setLoggedIn(true)
+        console.log(username)
 
       } else if (response.status === 401) {
         setIncorrect("ui icon negative visible message")
