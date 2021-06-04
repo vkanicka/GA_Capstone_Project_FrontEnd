@@ -10,8 +10,8 @@ import Main from "./components/Main";
 // --------------------------------------------
 // BASE URL
 //---------------------------------------------
-const BASEURL = "http://localhost:8000"
-// const BASEURL = "https://mental-health-trainer.herokuapp.com"
+// const BASEURL = "http://localhost:8000"
+const BASEURL = "https://mental-health-trainer.herokuapp.com"
 // --------------------------------------------
 // APP CONSTRUCTOR AND STATE
 //---------------------------------------------
