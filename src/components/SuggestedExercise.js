@@ -129,7 +129,7 @@ try {
 
 
   useEffect(getSuggestedExercise, [])
-  // useEffect(resetETBs,[])
+  useEffect(resetETBs,[getSuggestedExercise]])
   // useEffect(addUserExercise,[])
   console.log('userexerciseID:'+userExerciseID)
 
