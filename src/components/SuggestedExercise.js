@@ -32,20 +32,17 @@ export default function SuggestedExercise(props) {
   }
 
 
-  const addUserExercise = () => {
+  const addUserExercise = (exercise["id"]) => {
     console.log('triggered add user exercise')
     console.log(exercise)
     console.log(props.user)
+    console.log(`exercise id: ${}`)
     fetch(
       props.BASEURL+'/userexercises/',
       {
         method: "POST",
         body: JSON.stringify({
-          "exercise" : exercise["id"],
-          "completed" : 0,
-          "completed_count" : 0,
-          "favorite" : 0,
-          "recommended" : 0
+          exercise : exercise["id"]
         }),
         headers: {
           "Content-Type": "application/json"
