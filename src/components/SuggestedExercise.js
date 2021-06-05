@@ -38,40 +38,76 @@ export default function SuggestedExercise(props) {
   }
 
 
+  // const addUserExercise = () => {
+  //   console.log('triggered add user exercise')
+  //   console.log(exercise)
+  //   console.log(props.user)
+  //   console.log(`exercise id: ${exercise.id}`)
+  //   console.log(props.BASEURL+'/userexercises/')
+  //   fetch(
+  //     props.BASEURL+'/userexercises/',
+  //     {
+  //       method: "POST",
+  //       body: JSON.stringify({
+  //         exercise: exercise["id"]
+  //       }),
+  //       headers: {
+  //         "Content-Type": "application/json"
+  //       }
+  //       , credentials: "include"
+  //     })
+  //     .then(response => {
+  //       return response.json()
+  //     })
+  //     .then(data => {
+  //       console.log(data)
+  //       setUserExercise(data.data)
+  //       setExists(true)
+  //       if (data.status === 201) {
+  //         console.log('user exercise created')
+  //         setUserExerciseID(data.data.id)
+  //       }
+  //       else if (data.status === 401) {
+  //         console.log('need existing user exercise id here')
+  //       }
+  //     })
+  // }
+
+
   const addUserExercise = () => {
-    console.log('triggered add user exercise')
-    console.log(exercise)
-    console.log(props.user)
-    console.log(`exercise id: ${exercise.id}`)
-    console.log(props.BASEURL+'/userexercises/')
-    fetch(
-      props.BASEURL+'/userexercises/',
-      {
-        method: "POST",
-        body: JSON.stringify({
-          exercise: exercise["id"]
-        }),
-        headers: {
-          "Content-Type": "application/json"
-        }
-        , credentials: "include"
-      })
-      .then(response => {
-        return response.json()
-      })
-      .then(data => {
-        console.log(data)
-        setUserExercise(data.data)
-        setExists(true)
-        if (data.status === 201) {
-          console.log('user exercise created')
-          setUserExerciseID(data.data.id)
-        }
-        else if (data.status === 401) {
-          console.log('need existing user exercise id here')
-        }
-      })
-  }
+  console.log('triggered add user exercise')
+  fetch(
+    props.baseURL+'/userexercises/',
+    {
+      method: "POST",
+      body: JSON.stringify({
+        "exercise" : exercise["id"],
+        "completed" : 0,
+        "completed_count" : 0,
+        "favorite" : 0,
+        "recommended" : 0
+      }),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      credentials: "include"
+    })
+    .then(response => {
+      return response.json()
+    })
+    .then(data => {
+      console.log(data)
+      setUserExercise(data.data)
+      setExists(true)
+      if (data.status === 201) {
+        console.log('user exercise created')
+        setUserExerciseID(data.data.id)
+      }
+      else if (data.status === 401) {
+        console.log('need existing user exercise id here')
+      }
+    })
+}
 
 
 
