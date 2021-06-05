@@ -9,7 +9,7 @@ export default function SuggestedExercise(props) {
   const [exists, setExists]=useState(false)
 
   const resetETBs = () => {
-    fetch(props.BASEURL+'/reset/', {method:"PUT"})
+    fetch(props.BASEURL+'/reset/', {method:"PUT", credentials:"include"})
     console.log('ETBs reset.')
   }
 

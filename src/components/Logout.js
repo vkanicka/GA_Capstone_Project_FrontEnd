@@ -5,7 +5,10 @@ export default function Logout(props) {
   const logout = () => {
     props.setUser({})
     props.setLoggedIn(false)
-    fetch(props.BASEURL + "/users/logout")
+    fetch(props.BASEURL + "/users/logout", {
+      method: "GET",
+      credentials: "include"
+    })
   }
   return(
     <Button
