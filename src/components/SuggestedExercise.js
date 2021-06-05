@@ -13,6 +13,11 @@ export default function SuggestedExercise(props) {
     console.log('ETBs reset.')
   }
 
+  const resetEs = () => {
+    fetch(props.BASEURL+'/emotion/reset/', {method:"PUT", credentials:"include"})
+    console.log('Es reset.')
+  }
+
   const getSuggestedExercise = () => {
     fetch(props.BASEURL+'/suggestedexercises/1', {
       method: "GET",
@@ -29,6 +34,7 @@ export default function SuggestedExercise(props) {
         setExercise(data.data.exercise)
       })
       .then(()=>resetETBs())
+      .then(()=>resetEs())
   }
 
 
@@ -37,12 +43,13 @@ export default function SuggestedExercise(props) {
     console.log(exercise)
     console.log(props.user)
     console.log(`exercise id: ${exercise.id}`)
+    console.lg(props.BASEURL+'/userexercises/')
     fetch(
       props.BASEURL+'/userexercises/',
       {
         method: "POST",
         body: JSON.stringify({
-          exercise : exercise["id"]
+          exercise: exercise["id"]
         }),
         headers: {
           "Content-Type": "application/json"
@@ -127,6 +134,7 @@ try {
 
   useEffect(getSuggestedExercise, [])
   useEffect(resetETBs,[getSuggestedExercise])
+  useEffect(resetEs,[getSuggestedExercise])
   // useEffect(addUserExercise,[])
   console.log('userexerciseID:'+userExerciseID)
 
