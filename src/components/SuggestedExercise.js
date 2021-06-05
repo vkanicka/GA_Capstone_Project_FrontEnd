@@ -32,7 +32,7 @@ export default function SuggestedExercise(props) {
   }
 
 
-  const addUserExercise = (exercise["id"]) => {
+  const addUserExercise = () => {
     console.log('triggered add user exercise')
     console.log(exercise)
     console.log(props.user)
