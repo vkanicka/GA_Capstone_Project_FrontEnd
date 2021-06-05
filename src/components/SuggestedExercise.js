@@ -14,7 +14,7 @@ export default function SuggestedExercise(props) {
   }
 
   const resetEs = () => {
-    fetch(props.BASEURL+'/emotion/reset/', {method:"PUT", credentials:"include"})
+    fetch(props.BASEURL+'/emotion/reset', {method:"PUT", credentials:"include"})
     console.log('Es reset.')
   }
 
@@ -43,7 +43,7 @@ export default function SuggestedExercise(props) {
     console.log(exercise)
     console.log(props.user)
     console.log(`exercise id: ${exercise.id}`)
-    console.lg(props.BASEURL+'/userexercises/')
+    console.log(props.BASEURL+'/userexercises/')
     fetch(
       props.BASEURL+'/userexercises/',
       {
