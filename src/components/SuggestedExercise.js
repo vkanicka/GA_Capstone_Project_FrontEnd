@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from "react";
 // import UserExercises from "./UserExercises";
-import markdown from markdown
 
 export default function SuggestedExercise(props) {
   console.log(props.user)
@@ -186,7 +185,7 @@ try {
           <div className="ui large feed">
               <div className="content">
                 <div className="description left aligned">
-                  <p>{markdown(exercise["description"])}</p>
+                  <p>{exercise["description"]}</p>
                 </div>
               </div>
             </div>
