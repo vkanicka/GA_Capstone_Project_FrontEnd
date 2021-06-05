@@ -13,7 +13,7 @@ export default function Entry (props) {
           BASEURL={props.BASEURL}
           user={props.user}
           setUser={props.setUser}
-          loggedin={props.oggedin}
+          loggedin={props.loggedin}
           setLoggedIn={props.setLoggedIn}
           />
 
@@ -22,7 +22,7 @@ export default function Entry (props) {
             BASEURL={props.BASEURL}
             user={props.user}
             setUser={props.setUser}
-            loggedin={props.oggedin}
+            loggedin={props.loggedin}
             setLoggedIn={props.setLoggedIn}
             setSuggested={setSuggested}
             />
@@ -31,7 +31,7 @@ export default function Entry (props) {
             BASEURL={props.BASEURL}
             user={props.user}
             setUser={props.setUser}
-            loggedin={props.oggedin}
+            loggedin={props.loggedin}
             setLoggedIn={props.setLoggedIn}
             />
           }

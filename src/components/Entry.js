@@ -12,6 +12,9 @@ export default function Entry (props) {
         loggedin={props.loggedin}
         setLoggedIn={props.setLoggedIn}
       />
+      <div id='entryTitleContainer'>
+        <h1 id="entryTitle">my Mental Health Trainer</h1>
+      </div>
     </div>
   )
 }
