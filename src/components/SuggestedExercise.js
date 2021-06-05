@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 // import UserExercises from "./UserExercises";
+import markdown from markdown
 
 export default function SuggestedExercise(props) {
   console.log(props.user)
@@ -185,8 +186,7 @@ try {
           <div className="ui large feed">
               <div className="content">
                 <div className="description left aligned">
-                  <p>{exercise["description"]} Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size.</p>
-                  <p>Many people also have their own barometers for what makes a cute dog.</p>
+                  <p>{markdown(exercise["description"])}</p>
                 </div>
               </div>
             </div>
