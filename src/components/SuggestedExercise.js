@@ -36,7 +36,7 @@ export default function SuggestedExercise(props) {
     console.log('triggered add user exercise')
     console.log(exercise)
     console.log(props.user)
-    console.log(`exercise id: ${}`)
+    console.log(`exercise id: ${exercise.id}`)
     fetch(
       props.BASEURL+'/userexercises/',
       {
