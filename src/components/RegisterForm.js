@@ -24,6 +24,7 @@ const register = async e => {
   try {
     const response = await fetch(url, {
       method: "POST",
+      credentials: 'include',
       body: JSON.stringify(registerBody),
       headers: {
         "Content-Type": "application/json"

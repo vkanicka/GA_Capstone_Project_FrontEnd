@@ -30,7 +30,7 @@ export default function Login(props) {
         headers: {
           "Content-Type": "application/json"
         },
-        // credentials: "include"
+        credentials: "include"
       });
       if (response.status === 200) {
         props.closeModal()

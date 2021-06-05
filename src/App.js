@@ -33,6 +33,19 @@ export default function App() {
 
 {/*
 
+  <Main
+        BASEURL={BASEURL}
+        user={user}
+        setUser={setUser}
+        loggedin={loggedin}
+        setLoggedIn={setLoggedIn}
+    />
+
+
+
+
+*/}
+
   {loggedin
     ? <Main
         BASEURL={BASEURL}
@@ -52,17 +65,8 @@ export default function App() {
       </div>}
 
 
-*/}
 
 
-
-      <Main
-            BASEURL={BASEURL}
-            user={user}
-            setUser={setUser}
-            loggedin={loggedin}
-            setLoggedIn={setLoggedIn}
-        />
 
 
 

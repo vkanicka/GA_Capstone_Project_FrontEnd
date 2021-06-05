@@ -8,8 +8,19 @@ export default function SuggestedExercise(props) {
   const [userExerciseID, setUserExerciseID] = useState(0)
   const [exists, setExists]=useState(false)
 
+  const resetETBs = () => {
+    fetch(props.BASEURL+'/reset/', {method:"PUT"})
+    console.log('ETBs reset.')
+  }
+
   const getSuggestedExercise = () => {
-    fetch(props.BASEURL+'/suggestedexercises/1')
+    fetch(props.BASEURL+'/suggestedexercises/1', {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      credentials: "include"
+    })
       .then(response => {
         return response.json()
       })
@@ -19,10 +30,7 @@ export default function SuggestedExercise(props) {
       })
       .then(()=>resetETBs())
   }
-  const resetETBs = () => {
-    fetch(props.BASEURL+'/reset/', {method:"PUT"})
-    console.log('ETBs reset.')
-  }
+
 
   const addUserExercise = () => {
     console.log('triggered add user exercise')
@@ -42,7 +50,7 @@ export default function SuggestedExercise(props) {
         headers: {
           "Content-Type": "application/json"
         }
-        //, credentials: "include"
+        , credentials: "include"
       })
       .then(response => {
         return response.json()
@@ -79,7 +87,7 @@ try {
     headers: {
       "Content-Type": "application/json"
     },
-    // credentials: "include"
+    credentials: "include"
   });
   if (response.status === 200) {
     setUserExercise(prevState=> ({...prevState, favorite: !prevState.favorite}))
@@ -106,7 +114,7 @@ try {
       headers: {
         "Content-Type": "application/json"
       },
-      // credentials: "include"
+      credentials: "include"
     });
     if (response.status === 200) {
       setUserExercise(prevState=> ({...prevState, completed: !prevState.completed}))
